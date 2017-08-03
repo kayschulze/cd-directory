@@ -23,6 +23,21 @@ namespace CDDirectory.Contollers
       return View(allDiscs);
     }
 
+    // Lists all CDs.
+    [HttpPost("/cds")]
+    public ActionResult AddCD()
+    {
+      string albumtitle = Request.Form["albumtitle"];
+      string artist = Request.Form["artist"];
+      string year = Request.Form["year"];
+      // string comments = Request.Form["comments"];
+
+      CompactDisc newDisc = new CompactDisc(albumtitle, artist, year);
+
+      List<CompactDisc> allDiscs = CompactDisc.GetAll();
+      return View("AllCDs", allDiscs);
+    }
+
     // Lists all Artists with links to that artist's albums.
     [HttpGet("/artists")]
     public ActionResult AllArtists()
@@ -30,13 +45,13 @@ namespace CDDirectory.Contollers
       return View();
     }
 
-    // Allows user to add a new CD.
-    [HttpPost("/cds/add")]
-    public ActionResult AddCD()
-    {
-      //CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
-      return View();
-    }
+    // // Allows user to add a new CD.
+    // [HttpPost("/cds/add")]
+    // public ActionResult AddCD()
+    // {
+    //   //CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
+    //   return View();
+    // }
 
     // Allows user to add a new artist.
     [HttpPost("/artists/add")]

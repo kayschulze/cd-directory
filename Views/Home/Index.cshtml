@@ -6,22 +6,21 @@
   <h1>CD Directory</h1>
   <h2>Where your CDs will always be remembered.</h2>
 
-  <form action="/cds/add" method="post">
+  <form action="/cds" method="post">
     <div class="form-group">
-      <label for="location">Album Title: </label>
-      <input type="text" class="form-control" id="location" name="location">
-      <label for="year">Artist: </label>
+      <label for="albumtitle">Album Title: </label>
+      <input type="text" class="form-control" id="albumtitle" name="albumtitle">
+      <label for="artist">Artist: </label>
+      <input type="text" class="form-control" id="artist" name="artist">
+      <label for="year">Year: </label>
       <input type="text" class="form-control" id="year" name="year">
-      <label for="season">Year: </label>
-      <input type="text" class="form-control" id="favoriteAttraction" name="favoriteAttraction">
-      <label for="Comments">Comments</label>
-      <input type="text" class="form-control" id="Comments" name="Comments">
+      <label for="comments">Comments:</label>
+      <input type="text" class="form-control" id="comments" name="comments">
       <button type="submit" name="button">Enter</button>
     </div>
   </form>
 
   <a href="/cds"><button>View All CDs</a></button>
-  <a href="/cds/add"><button>Add A CD</a></button>
   <a href="/artists"><button>Add An Artist</a></button>
 
 </div>

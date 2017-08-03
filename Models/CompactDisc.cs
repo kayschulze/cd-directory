@@ -52,6 +52,11 @@ namespace CDDirectory.Models
       _year = newYear;
     }
 
+    public int GetID()
+    {
+      return _id;
+    }
+
     public string GetComments()
     {
       return _comments;
