@@ -49,8 +49,11 @@ namespace CDDirectory.Contollers
     [HttpPost("/artists/add")]
     public ActionResult AddArtist()
     {
-      //Artist newArtist = new Artist (Request.Form["new-artist"]);
-      return View();
+      string artistname = Request.Form["artistname"];
+
+      Artist newArtist = new Artist(artistname);
+      
+      return View(newArtist);
     }
 
     // Displays a particular album based on its album id.

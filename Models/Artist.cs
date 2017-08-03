@@ -7,7 +7,7 @@ namespace CDDirectory.Models
   {
     private string _artist;
     private static List<CompactDisc> _albums = new List<CompactDisc> {};
-    private int _id;
+    private int _artistid;
 
     private static List<Artist> _artists = new List<Artist> {};
 
