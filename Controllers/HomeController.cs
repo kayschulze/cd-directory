@@ -33,16 +33,16 @@ namespace CDDirectory.Contollers
     [HttpPost("/cds/add")]
     public ActionResult AddCD()
     {
-      CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
-      return View(newDisc);
+      //CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
+      return View();
     }
 
     // Allows user to add a new artist.
     [HttpPost("/artists/add")]
     public ActionResult AddArtist()
     {
-      Artist newArtist = new Artist (Request.Form["new-artist"]);
-      return View(newArtist);
+      //Artist newArtist = new Artist (Request.Form["new-artist"]);
+      return View();
     }
 
     // Displays a particular album based on its album id.

@@ -9,9 +9,9 @@ namespace CDDirectory.Models
     private string _artist;
     private string _year;
     private string _comments;
-    private string _id;
+    private int _id;
 
-    private static List<CompactDisc> _albums = new List<string> {};
+    private static List<CompactDisc> _albums = new List<CompactDisc> {};
 
     public CompactDisc (string albumtitle, string artist, string year)
     {
