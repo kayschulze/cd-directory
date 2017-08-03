@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <h1>Add a New Place</h1>
+  <form action="/places/add" method="post">
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="location" name="location">
+      <label for="year">Year You Visited</label>
+      <input type="text" class="form-control" id="year" name="year">
+      <label for="season">Season You Visited</label>
+      <input type="text" class="form-control" id="season" name="season">
+      <label for="favoriteAttraction">Favorite Attraction</label>
+      <input type="text" class="form-control" id="favoriteAttraction" name="favoriteAttraction">
+      <label for="Comments">Comments</label>
+      <input type="text" class="form-control" id="Comments" name="Comments">
+      <button type="submit" name="button">Enter</button>
+    </div>
+  </form>
+</div>
