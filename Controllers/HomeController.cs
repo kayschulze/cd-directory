@@ -76,6 +76,18 @@ namespace CDDirectory.Contollers
       return View(model);
     }
 
+    [HttpGet("/artists/{artistid}/new")]
+    public ActionResult ArtistCDForm(int artistid)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Artist selectedArtist = Artist.FindArtistID(artistid);
+      List<CompactDisc> artistCDs = selectedArtist.GetCDs();
+      model.Add("artist", selectedArtist);
+      model.Add("cds", artistCDs);
+
+      return View(model);
+    }
+
     // Displays individual artist with a listing of the associated albums
     [HttpGet("/cds/{id}")]
     public ActionResult CDDetail(int id)

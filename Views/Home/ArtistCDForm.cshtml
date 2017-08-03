@@ -1,0 +1,14 @@
+<h1>Add a new CD to @Model["artist"].GetArtist()</h1>
+<form action='/cds' method='post'>
+  <input id='category-id' name='category-id' type='hidden' value='@Model["artist"].GetArtistID()'>
+
+  <label for="albumtitle">Album Title: </label>
+  <input type="text" class="form-control" id="albumtitle" name="albumtitle">
+  <label for="year">Year: </label>
+  <input type="text" class="form-control" id="year" name="year">
+  <label for="comments">Comments:</label>
+  <input type="text" class="form-control" id="comments" name="comments">
+  <button type="submit" name="button">Enter</button>
+
+  <button type='submit'>Add CD</button>
+</form>
