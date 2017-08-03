@@ -1,0 +1,4 @@
+/Users/Guest/Desktop/cd-directory/bin/Debug/netcoreapp1.1/changeme.deps.json
+/Users/Guest/Desktop/cd-directory/bin/Debug/netcoreapp1.1/changeme.runtimeconfig.json
+/Users/Guest/Desktop/cd-directory/bin/Debug/netcoreapp1.1/changeme.runtimeconfig.dev.json
+/Users/Guest/Desktop/cd-directory/obj/Debug/netcoreapp1.1/changeme.AssemblyInfo.cs

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Albums</h1>
+@if (@Model.Count == )
+{
+  <h3>No Albums have been added yet!</h3>
+  <h4>Do Not be shy.  Please contribute.</h4>
+}
+
+@foreach (var disc in Model)
+{
+  <h3><a href='/cds/@disc.GetID()'>@disc.GetAlbumTitle()</a></h3>
+}
+
+<p><a href='/'>Back home</a></p>

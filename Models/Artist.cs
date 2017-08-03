@@ -1,25 +1,23 @@
 using System.Collections.Generic;
 using System;
 
-namespace CDDirectory.Models
+namespace Artist.Models
 {
-  public class CompactDisc
+  public class Artist
   {
-    private string _albumtitle;
     private string _artist;
-    private string _year;
-    private string _comments;
+    private string _album;
     private string _id;
+    private static List<CompactDisc> _albums = new List<CompactDisc> {};
 
-    private static List<CompactDisc> _albums = new List<string> {};
+    private static List<Artist> _artists = new List<Artist> {};
 
     public CompactDisc (string albumtitle, string artist, string year)
     {
-      _albumtitle = albumtitle;
       _artist = artist;
-      _year = year;
-      _id = _albums.Count;
-      _albums.Add(this);
+      _album = album;
+      _id = _artists.Count;
+      _artists.Add(this);
     }
 
     public string GetAlbumTitle()

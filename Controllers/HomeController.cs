@@ -8,7 +8,7 @@ namespace CDDirectory.Contollers
   public class HomeController : Controller
   {
 
-    // Homepage welcomes visitor and gives a link to viewing all CDs, adding a CD, or adding an artist.
+    // Homepage welcomes visitor and allows visitor to add a CD or an Artist.  Gives a link to viewing all CDs, adding a CD, or adding an artist.
     [HttpGet("/")]
     public ActionResult Index()
     {
@@ -30,19 +30,33 @@ namespace CDDirectory.Contollers
     }
 
     // Allows user to add a new CD.
-    [HttpPost("/cd/add")]
+    [HttpPost("/cds/add")]
     public ActionResult AddCD()
     {
-      CompactDisk newDisk = new CompactDisk (Request.Form["new-disk"]);
-      return View(newDisk);
+      CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
+      return View(newDisc);
     }
 
     // Allows user to add a new artist.
-    [HttpPost("/artist/add")]
+    [HttpPost("/artists/add")]
     public ActionResult AddArtist()
     {
       Artist newArtist = new Artist (Request.Form["new-artist"]);
       return View(newArtist);
+    }
+
+    // Displays a particular album based on its album id.
+    [HttpGet("/artists/{id}")]
+    public ActionResult CDDetail()
+    {
+      return View();
+    }
+
+    // Displays individual artist with a listing of the associated albums
+    [HttpGet("/cds/CDDetail/{id}")]
+    public ActionResult ArtistDetail()
+    {
+      return View();
     }
   }
 }
