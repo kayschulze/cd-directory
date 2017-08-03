@@ -76,5 +76,10 @@ namespace CDDirectory.Models
     {
       _albums.Clear();
     }
+
+    public static CompactDisc Find(int searchID)
+    {
+      return _albums[searchID];
+    }
   }
 }

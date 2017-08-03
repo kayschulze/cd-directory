@@ -45,14 +45,6 @@ namespace CDDirectory.Contollers
       return View();
     }
 
-    // // Allows user to add a new CD.
-    // [HttpPost("/cds/add")]
-    // public ActionResult AddCD()
-    // {
-    //   //CompactDisc newDisc = new CompactDisc (Request.Form["new-disk"]);
-    //   return View();
-    // }
-
     // Allows user to add a new artist.
     [HttpPost("/artists/add")]
     public ActionResult AddArtist()
@@ -63,16 +55,17 @@ namespace CDDirectory.Contollers
 
     // Displays a particular album based on its album id.
     [HttpGet("/artists/{id}")]
-    public ActionResult CDDetail()
+    public ActionResult ArtistDetail()
     {
       return View();
     }
 
     // Displays individual artist with a listing of the associated albums
-    [HttpGet("/cds/CDDetail/{id}")]
-    public ActionResult ArtistDetail()
+    [HttpGet("/cds/{id}")]
+    public ActionResult CDDetail(int id)
     {
-      return View();
+      CompactDisc disc = CompactDisc.Find(id);
+      return View(disc);
     }
   }
 }
