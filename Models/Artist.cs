@@ -5,27 +5,37 @@ namespace CDDirectory.Models
 {
   public class Artist
   {
-    private string _artist;
+    private string _artistname;
     private static List<CompactDisc> _albums = new List<CompactDisc> {};
     private int _artistid;
 
     private static List<Artist> _artists = new List<Artist> {};
 
-    public Artist (string albumtitle, string artist, string year)
+    public Artist (string artistname)
     {
-      _artist = artist;
-      _id = _artists.Count;
+      _artistname = artistname;
+      _artistid = _artists.Count;
       _artists.Add(this);
     }
 
     public string GetArtist()
     {
-      return _artist;
+      return _artistname;
     }
 
     public void SetArtist(string newArtist)
     {
-      _artist = newArtist;
+      _artistname = newArtist;
+    }
+
+    public int GetArtistID()
+    {
+      return _artistid;
+    }
+
+    public List<CompactDisc> GetCDs()
+    {
+      return _albums;
     }
 
     public List<CompactDisc> GetAlbums()
@@ -38,6 +48,10 @@ namespace CDDirectory.Models
       return _artists;
     }
 
+    public static Artist FindArtistID(int searchID)
+    {
+      return _artists[searchID];
+    }
     public static void ClearAll()
     {
       _artists.Clear();

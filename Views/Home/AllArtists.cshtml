@@ -1,3 +1,17 @@
 @{
   Layout = "_Layout";
 }
+
+<h1>Artists</h1>
+@if (@Model.Count == 0)
+{
+  <h3>No Artists have been added yet!</h3>
+  <h4>Do Not be shy.  Please contribute.</h4>
+}
+
+@foreach (var artist in Model)
+{
+  <h3>@artist.GetArtistID(). <a href='/artists/@artist.GetArtistID()'>@artist.GetArtist()</a></h3>
+}
+
+<p><a href='/'>Back home</a></p>

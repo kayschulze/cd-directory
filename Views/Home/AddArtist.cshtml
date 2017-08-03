@@ -1,3 +1,22 @@
 @{
   Layout = "_Layout";
 }
+
+<div class="container">
+  <h1>CD Directory</h1>
+  <h2>Where your CDs will always be remembered.</h2>
+  <h3>Add an Artist</h3>
+
+  <form action="/artists" method="post">
+    <div class="form-group">
+      <label for="artistname">Artist Name: </label>
+      <input type="text" class="form-control" id="artistname" name="artistname">
+
+      <button type="submit" name="button">Enter</button>
+    </div>
+  </form>
+
+  <a href="/cds"><button>View All CDs</a></button>
+  <a href="/artists"><button>Add An Artist</a></button>
+
+</div>

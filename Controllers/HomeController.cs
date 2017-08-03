@@ -38,29 +38,42 @@ namespace CDDirectory.Contollers
       return View("AllCDs", allDiscs);
     }
 
-    // Lists all Artists with links to that artist's albums.
+    [HttpGet("/artists/add")]
+    public ActionResult AddArtist()
+    {
+      return View();
+    }
+
     [HttpGet("/artists")]
     public ActionResult AllArtists()
     {
-      return View();
+      List<Artist> allArtists = Artist.GetAllArtists();
+      return View(allArtists);
     }
 
-    // Allows user to add a new artist.
-    [HttpPost("/artists/add")]
-    public ActionResult AddArtist()
+    // Lists all Artists with links to that artist's albums.
+    [HttpPost("/artists")]
+    public ActionResult IncludeArtist()
     {
       string artistname = Request.Form["artistname"];
-
       Artist newArtist = new Artist(artistname);
-      
-      return View(newArtist);
+
+      List<Artist> allArtists = Artist.GetAllArtists();
+
+      return View("AllArtists", allArtists);
     }
 
     // Displays a particular album based on its album id.
-    [HttpGet("/artists/{id}")]
-    public ActionResult ArtistDetail()
+    [HttpGet("/artists/{artistid}")]
+    public ActionResult ArtistDetail(int artistid)
     {
-      return View();
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Artist selectedArtist = Artist.FindArtistID(artistid);
+      List<CompactDisc> artistCDs = selectedArtist.GetCDs();
+      model.Add("artist", selectedArtist);
+      model.Add("cds", artistCDs);
+
+      return View(model);
     }
 
     // Displays individual artist with a listing of the associated albums
