@@ -19,7 +19,8 @@ namespace CDDirectory.Contollers
     [HttpGet("/cds")]
     public ActionResult AllCDs()
     {
-      return View();
+      List<CompactDisc> allDiscs = CompactDisc.GetAll();
+      return View(allDiscs);
     }
 
     // Lists all Artists with links to that artist's albums.
